@@ -1,5 +1,5 @@
 .main {
-  @apply flex flex-col gap-10 justify-center items-center h-screen;
+  @apply flex flex-col gap-10 items-center h-screen;
 
   & .section {
     @apply flex flex-col w-full gap-11 px-6;

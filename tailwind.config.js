@@ -16,6 +16,15 @@ module.exports = {
           500: "#000102",
         },
       },
+      keyframes: {
+        appear: {
+          "0%": { bottom: 0, opacity: 0 },
+          "100%": { bottom: "10%", opacity: 1 },
+        },
+      },
+      animation: {
+        appear: "appear 1s ease-in-out forwards",
+      },
     },
   },
   plugins: [],

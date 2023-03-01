@@ -3,6 +3,11 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 
 import { Text } from "@/components/text";
+import { Navbar, NavButton } from "@/components/navbar";
+import { RiHome2Line } from "react-icons/ri";
+import { RxPerson } from "react-icons/rx";
+import { AiOutlineCode } from "react-icons/ai";
+
 import profilePic from "../../public/profile.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -42,6 +47,11 @@ export default function Home() {
           Desenvolvedor Front-end
         </Text>
       </main>
+      <Navbar>
+        <NavButton Icon={RiHome2Line}>Home</NavButton>
+        <NavButton Icon={RxPerson}>About</NavButton>
+        <NavButton Icon={AiOutlineCode}>Posts</NavButton>
+      </Navbar>
     </>
   );
 }
