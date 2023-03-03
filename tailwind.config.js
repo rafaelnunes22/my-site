@@ -21,9 +21,14 @@ module.exports = {
           "0%": { bottom: 0, opacity: 0 },
           "100%": { bottom: "10%", opacity: 1 },
         },
+        blink: {
+          "0%": { opacity: 0 },
+          "100%": { opacity: 1 },
+        },
       },
       animation: {
         appear: "appear 1s ease-in-out forwards",
+        blink: "blink 0.8s infinite",
       },
     },
   },

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
+import cn from "clsx";
 
 import { Text } from "@/components/text";
 import { Navbar, NavButton } from "@/components/navbar";
@@ -12,8 +13,13 @@ import profilePic from "../../public/profile.jpg";
 
 const inter = Inter({ subsets: ["latin"] });
 import styles from "@/styles/Home.module.css";
+import { Typewriter } from "@/components/typewriter";
+import { useState } from "react";
 
-export default function Home() {
+export default function Home(): JSX.Element {
+  const [showHighlight, setShowHighlight] = useState<boolean>(false);
+  const [showSubtitle, setShowSubtitle] = useState<boolean>(false);
+
   return (
     <>
       <Head>
@@ -36,16 +42,35 @@ export default function Home() {
             height={300}
             className={styles.img}
           />
-          <Text as="h1" className={styles.h1}>
-            Olá, meu nome é{" "}
-            <Text as="strong" className={styles.strong}>
-              Rafael
-            </Text>
-          </Text>
+          <div className={styles.div}>
+            <Typewriter
+              as="h1"
+              text="Olá, meu nome é "
+              onFinish={() => {
+                setShowHighlight(true);
+              }}
+              className={styles.h1}
+            />
+            {showHighlight ? (
+              <Typewriter
+                as="h1"
+                text="Rafael"
+                onFinish={() => {
+                  setShowSubtitle(true);
+                }}
+                className={cn(styles.h1, styles.strong)}
+                blinkAtEnd
+              />
+            ) : null}
+          </div>
         </section>
-        <Text as="span" className={styles.span}>
-          Desenvolvedor Front-end
-        </Text>
+        {showSubtitle ? (
+          <Text as="span" className={styles.span}>
+            Desenvolvedor Front-end
+          </Text>
+        ) : (
+          <div className={styles.empty} />
+        )}
       </main>
       <Navbar>
         <NavButton Icon={RiHome2Line}>Home</NavButton>

@@ -1,0 +1,10 @@
+.typewriter {
+  @apply w-full;
+
+  &.blink {
+    &:after {
+      @apply animate-blink text-white;
+      content: "|";
+    }
+  }
+}

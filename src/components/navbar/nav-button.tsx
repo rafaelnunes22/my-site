@@ -7,7 +7,7 @@ type Props = {
   Icon: IconType;
 } & HTMLAttributes<HTMLAnchorElement>;
 
-function NavButton({ Icon, children, ...props }: Props) {
+function NavButton({ Icon, children, ...props }: Props): JSX.Element {
   return (
     <a className={styles["button"]} {...props}>
       <Icon size={32} />

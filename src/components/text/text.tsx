@@ -4,7 +4,7 @@ type Props = {
   as: keyof JSX.IntrinsicElements;
 } & React.HTMLAttributes<HTMLElement>;
 
-function Text({ as, children, ...props }: Props) {
+function Text({ as, children, ...props }: Props): JSX.Element {
   return React.createElement(as, { ...props }, children);
 }
 
