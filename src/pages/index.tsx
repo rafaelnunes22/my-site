@@ -1,18 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import cn from "clsx";
 
 import { Text } from "@/components/text";
-import { Navbar, NavButton } from "@/components/navbar";
-import { RiHome2Line } from "react-icons/ri";
-import { RxPerson } from "react-icons/rx";
-import { AiOutlineCode } from "react-icons/ai";
 
 import profilePic from "../../public/profile.jpg";
 
-const inter = Inter({ subsets: ["latin"] });
-import styles from "@/styles/Home.module.css";
+import styles from "@/styles/home.module.css";
 import { Typewriter } from "@/components/typewriter";
 import { useState } from "react";
 
@@ -30,11 +24,11 @@ export default function Home(): JSX.Element {
       </Head>
       <main className={styles.main}>
         <section className={styles.section}>
-          <Text as="header">
+          <header>
             <Text as="h1" className="hidden">
               Início
             </Text>
-          </Text>
+          </header>
           <Image
             src={profilePic}
             alt="Foto do autor"
@@ -72,11 +66,6 @@ export default function Home(): JSX.Element {
           <div className={styles.empty} />
         )}
       </main>
-      <Navbar>
-        <NavButton Icon={RiHome2Line}>Home</NavButton>
-        <NavButton Icon={RxPerson}>About</NavButton>
-        <NavButton Icon={AiOutlineCode}>Posts</NavButton>
-      </Navbar>
     </>
   );
 }

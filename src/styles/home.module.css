@@ -1,5 +1,5 @@
 .main {
-  @apply flex flex-col gap-10 items-center h-screen p-8;
+  @apply flex flex-col gap-10 items-center h-full p-8;
 
   & .section {
     @apply flex flex-col w-full gap-11;
@@ -30,20 +30,13 @@
   }
 
   @screen desktop {
-    @apply flex flex-col gap-32 justify-center items-center h-screen;
+    @apply gap-32 justify-center;
 
     & .section {
-      @apply flex flex-row w-[1080px] gap-11;
-
-      & .img {
-        @apply rounded-full w-2/3;
-      }
+      @apply flex-row w-[1024px];
 
       & .h1 {
-        @apply text-white text-9xl;
-      }
-      & .strong {
-        @apply text-green-100;
+        @apply text-9xl;
       }
     }
   }

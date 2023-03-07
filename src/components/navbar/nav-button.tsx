@@ -1,11 +1,14 @@
-import React, { HTMLAttributes } from "react";
+import React, { DetailedHTMLProps, AnchorHTMLAttributes } from "react";
 import { IconType } from "react-icons";
 
 import styles from "./styles.module.css";
 
 type Props = {
   Icon: IconType;
-} & HTMLAttributes<HTMLAnchorElement>;
+} & DetailedHTMLProps<
+  AnchorHTMLAttributes<HTMLAnchorElement>,
+  HTMLAnchorElement
+>;
 
 function NavButton({ Icon, children, ...props }: Props): JSX.Element {
   return (
