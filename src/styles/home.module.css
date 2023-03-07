@@ -33,7 +33,7 @@
     @apply gap-32 justify-center;
 
     & .section {
-      @apply flex-row w-[1024px];
+      @apply flex-row w-[1080px];
 
       & .h1 {
         @apply text-9xl;
